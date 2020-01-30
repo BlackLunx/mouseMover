@@ -15,11 +15,13 @@ int main()
 		if (was) {
 			mouse_event(MOUSEEVENTF_MOVE, rand() % 200 - 100, rand() % 200 - 100, 0, 0);
 			mouse_event(MOUSEEVENTF_WHEEL, rand() % 200 - 100, 0, 0, 0);
+			mouse_event(MOUSEEVENTF_RIGHTDOWN, 0, 0, 0, 0);
+			mouse_event(MOUSEEVENTF_RIGHTUP, 0, 0, 0, 0);
 			keybd_event(VK_NUMLOCK, 0x45, KEYEVENTF_EXTENDEDKEY | 0, 0);
 // Simulate a key release
 			keybd_event(VK_NUMLOCK, 0x45, KEYEVENTF_EXTENDEDKEY | KEYEVENTF_KEYUP, 0);
 		}
-		Sleep(11);
+		Sleep(1000);
 	}
 	return 0;
 }
